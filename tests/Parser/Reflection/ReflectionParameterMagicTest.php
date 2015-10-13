@@ -37,6 +37,7 @@ class ReflectionParameterMagicTest extends PHPUnit_Framework_TestCase
         $this->reflectionClass = $backend->getClasses()['Project\ReflectionMethod'];
         $reflectionMethodMagic = $this->reflectionClass->getMagicMethods()['doAnOperation'];
         $this->reflectionParameterMagic = $reflectionMethodMagic->getParameters()['data'];
+        $this->reflectionParameterMagicDefaultValue = $reflectionMethodMagic->getParameters()['type'];
     }
 
 
@@ -127,6 +128,13 @@ class ReflectionParameterMagicTest extends PHPUnit_Framework_TestCase
     public function testIsDefaultValueAvailable()
     {
         $this->assertFalse($this->reflectionParameterMagic->isDefaultValueAvailable());
+        $this->assertTrue($this->reflectionParameterMagicDefaultValue->isDefaultValueAvailable());
+    }
+
+
+    public function testGetDefaultValueDefinition()
+    {
+        $this->assertSame('default', $this->reflectionParameterMagicDefaultValue->getDefaultValueDefinition());
     }
 
 
