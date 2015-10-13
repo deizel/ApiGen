@@ -13,7 +13,7 @@ namespace Project;
  *
  * @property-read int $skillCounter
  * @method string getName() This is some short description.
- * @method string doAnOperation(\stdClass $data, $type) This also some description.
+ * @method string doAnOperation(\stdClass $data, $type = 'default') This also some description.
  * @method static string doAStaticOperation(\stdClass $data, $type) This also some description.
  * @method static doAVoidStaticOperation(\stdClass $data, $type) This also some description.
  *

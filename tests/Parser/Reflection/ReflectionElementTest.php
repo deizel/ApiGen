@@ -136,7 +136,7 @@ class ReflectionElementTest extends PHPUnit_Framework_TestCase
         $docCommentParts[] = ' * This is some description';
         $docCommentParts[] = ' * @property-read int $skillCounter';
         $docCommentParts[] = ' * @method string getName() This is some short description.';
-        $docCommentParts[] = ' * @method string doAnOperation(\stdClass $data, $type) This also some description.';
+        $docCommentParts[] = ' * @method string doAnOperation(\stdClass $data, $type = \'default\') This also some description.';
         $docCommentParts[] = ' * @package Some_Package';
 
         foreach ($docCommentParts as $part) {
